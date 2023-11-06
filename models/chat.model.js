@@ -1,5 +1,7 @@
 const sql = require("./db.js");
 
+const Chat = function() {};
+
 Chat.getAll = (req, result) => {
   let query;
   if (req?.query?.nextCursor > 0) {
