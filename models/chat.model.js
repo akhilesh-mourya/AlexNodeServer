@@ -6,10 +6,10 @@ Chat.getAll = (req, result) => {
   let query;
   if (req?.query?.nextCursor > 0) {
     query = `SELECT messages._id, messages.text, messages.user_id, messages.createdAt, user.name, user.avatar 
-    FROM messages LEFT JOIN user ON messages.user_id = user.id where messages._id > ${req?.query?.nextCursor} ORDER BY messages._id LIMIT 10`;
+    FROM messages LEFT JOIN user ON messages.user_id = user.id where messages._id < ${req?.query?.nextCursor} ORDER BY  messages.createdAt DESC, messages._id LIMIT 5`;
   } else {
     query = `SELECT messages._id, messages.text, messages.user_id, messages.createdAt, user.name, user.avatar 
-    FROM messages LEFT JOIN user ON messages.user_id = user.id ORDER BY messages._id LIMIT 10`;
+    FROM messages LEFT JOIN user ON messages.user_id = user.id ORDER BY messages.createdAt DESC, messages._id LIMIT 5`;
   }
 
   sql.query(query, (err, res) => {
