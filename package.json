@@ -1,0 +1,29 @@
+{
+  "name": "alexnodeserver",
+  "version": "1.0.0",
+  "description": "Chat api backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhilesh-mourya/AlexNodeServer.git"
+  },
+  "keywords": [
+    "Node",
+    "server",
+    "api"
+  ],
+  "author": "Akhilesh Mourya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akhilesh-mourya/AlexNodeServer/issues"
+  },
+  "homepage": "https://github.com/akhilesh-mourya/AlexNodeServer#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mysql": "2.18.1"
+  }
+}
