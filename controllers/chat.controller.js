@@ -6,7 +6,8 @@ exports.findAll = (req, res) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving employees.",
+          err.message || "Some error occurred while retrieving chats.",
+          success: false,
       });
     else res.send(data);
   });

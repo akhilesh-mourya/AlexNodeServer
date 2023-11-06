@@ -29,9 +29,11 @@ Chat.getAll = (req, result) => {
         user: {_id: item?.user_id, name: item?.name, avatar: item?.avatar}
       }
       newRes.push(data)
-    })
-    const nextCursor = newRes.length > 0 ? newRes[newRes.length - 1].id : null;
-    result(null, { data: newRes, nextCursor });
+    });
+
+    const nextCursor = newRes.length > 0 ? newRes[newRes.length - 1]._id : null;
+
+    result(null, { data: newRes, nextCursor, success: newRes.length > 0 });
   });
 };
 
